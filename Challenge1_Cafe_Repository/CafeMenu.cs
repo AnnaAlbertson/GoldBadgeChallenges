@@ -15,5 +15,20 @@ namespace Challenge1_Cafe_Repository
         public string MealName { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+
+        //Empty constructor
+        public CafeMenu()
+        {
+
+        }
+
+        //Overloaded constructor
+        public CafeMenu(int mealNumber, string mealName, string description, decimal price)
+        {
+            MealNumber = mealNumber;
+            MealName = mealName;
+            Description = description;
+            Price = price;
+        }
     }
 }
