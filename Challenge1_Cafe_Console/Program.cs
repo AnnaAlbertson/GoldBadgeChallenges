@@ -12,7 +12,7 @@ namespace Challenge1_Cafe_Console
         static void Main(string[] args)
         {
             //new instances of CafeMenu and CafeMenu_Repository to access in the console
-            CafeMenu menuItems = new CafeMenu();
+            CafeMenu menu = new CafeMenu();
             CafeMenu_Repository repo = new CafeMenu_Repository();
         }
     }
