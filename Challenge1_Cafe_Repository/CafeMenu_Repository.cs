@@ -30,9 +30,40 @@ namespace Challenge1_Cafe_Repository
         }
 
         //Delete menu items
-        public void DeleteMenuItem()
+        public bool DeleteMenuItem(int mealNumber)
         {
+            CafeMenu menuItem = GetMenuItemByMealNumber(mealNumber);
 
+            if(menuItem == null)
+            {
+                return false;
+            }
+
+            int initialCount = _listOfCafeMenu.Count;
+            _listOfCafeMenu.Remove(menuItem);
+
+            if (initialCount > _listOfCafeMenu.Count)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //Helper method
+        public CafeMenu GetMenuItemByMealNumber(int mealNumber)
+        {
+            foreach (CafeMenu menuItem in _listOfCafeMenu)
+            {
+                if(menuItem.MealNumber == mealNumber)
+                {
+                    return menuItem;
+                }
+
+            }
+            return null;
         }
     }
 }
