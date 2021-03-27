@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace Challenge1_Cafe_Repository
 {
+    //Enum for the ingredients, because most restaurants have ingredients they reuse over and over in other dishes
+    //Stretch goal:Add method to add to enum while console app is running
+    public enum CafeIngredients
+    {
+
+    }
+
     public class CafeMenu
     {
         //Required menu items: meal number, meal name, description, list of ingredients, price
@@ -15,7 +22,8 @@ namespace Challenge1_Cafe_Repository
         public string MealName { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public List<string> Ingredients { get; set; }
+        //Got the idea to make a List<enum> as a property when I talked to Austin for a checkup
+        public List<CafeIngredients> Ingredients { get; set; }
 
         //Empty constructor
         public CafeMenu()
@@ -24,7 +32,7 @@ namespace Challenge1_Cafe_Repository
         }
 
         //Overloaded constructor
-        public CafeMenu(int mealNumber, string mealName, string description, decimal price, List<string> ingredients)
+        public CafeMenu(int mealNumber, string mealName, string description, decimal price, List<CafeIngredients> ingredients)
         {
             MealNumber = mealNumber;
             MealName = mealName;
