@@ -44,7 +44,7 @@ namespace Challenge1_Cafe_Repository
         public string Description { get; set; }
         public decimal Price { get; set; }
         //Got the idea to make a List<enum> as a property when I talked to Austin for a checkup
-        public List<CafeIngredients> Ingredients { get; set; }
+        public List<CafeIngredients> MealIngredients { get; set; }
 
         //Empty constructor
         public CafeMenu()
@@ -53,13 +53,13 @@ namespace Challenge1_Cafe_Repository
         }
 
         //Overloaded constructor
-        public CafeMenu(int mealNumber, string mealName, string description, decimal price, List<CafeIngredients> ingredients)
+        public CafeMenu(int mealNumber, string mealName, string description, decimal price, List<CafeIngredients> mealIngredients)
         {
             MealNumber = mealNumber;
             MealName = mealName;
             Description = description;
             Price = price;
-            Ingredients = ingredients;
+            MealIngredients = mealIngredients;
         }
     }
 }
