@@ -11,7 +11,28 @@ namespace Challenge1_Cafe_Repository
     //Stretch goal:Add method to add to enum while console app is running
     public enum CafeIngredients
     {
-
+        Eggs,
+        Hollandaise,
+        MapleSyrup,
+        Ham,
+        Bacon,
+        Sausage,
+        Chicken,
+        CrabCake,
+        Salmon,
+        EnglishMuffin,
+        Sourdough,
+        Wheat,
+        Potatoes,
+        Tomato,
+        Spinach,
+        Avocado,
+        Lettuce,
+        Grits,
+        MixedFruit,
+        Havarti,
+        Swiss,
+        Brie
     }
 
     public class CafeMenu
