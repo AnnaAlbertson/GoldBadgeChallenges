@@ -12,7 +12,7 @@ namespace Challenge1_Cafe_Repository
         private List<CafeMenu> _listOfCafeMenu = new List<CafeMenu>();
 
         //Return list of Cafe Menu
-        public List<CafeMenu> ReturnList()
+        public List<CafeMenu> GetCafeMenuList()
         {
             return _listOfCafeMenu;
         }
