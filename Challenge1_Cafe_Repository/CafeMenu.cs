@@ -15,6 +15,8 @@ namespace Challenge1_Cafe_Repository
         Feta,
         SignatureSpices,
         Hollandaise,
+        EnglishMuffin,
+        CrabCakes,
         Bacon,
         Blueberries,
         MuffinMix
