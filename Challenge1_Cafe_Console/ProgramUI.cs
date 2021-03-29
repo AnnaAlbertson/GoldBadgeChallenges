@@ -21,7 +21,51 @@ namespace Challenge1_Cafe_Console
         //Menu method
         private void Menu()
         {
+            //While Loop to keep program running
+            bool keepRunning = true;
+            while (keepRunning)
+            {
+                //Display options to user
+                Console.WriteLine("Welcome to Komodo Cafe's Menu Editor!/n" +
+                    "What would you like to do today?/n" +
+                    "/n" +
+                    "I would like to.../n" +
+                    "1)add a new item to our menu.../n" +
+                    "2)read our current menu.../n" +
+                    "3)remove an item from our menu.../n" +
+                    "4)leave now, please./n" +
+                    "/n" +
+                    "Please enter your selection below then press enter to continue...");
 
+                string selection = Console.ReadLine();
+               
+                switch (selection)
+                {
+                    case "1":
+                        // Create new menu item
+                        CreateNewMenuItem();
+                        break;
+                    case "2":
+                        // View current menu
+                        ReadCurrentCafeMenu();
+                        break;
+                    case "3":
+                        // View content by title
+                        RemoveAMenuItem();
+                        break;
+                    case "4":
+                        // leaving
+                        keepRunning = false;
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid number.");
+                        break;
+                }
+
+                Console.WriteLine("Please press any key to continue...");
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
 
         //Create a cafe menu item
@@ -67,7 +111,9 @@ namespace Challenge1_Cafe_Console
             CafeMenu menuItemThree = new CafeMenu(3, "Blueberry Muffins",
                 "These perfectly crumbly, decadent muffins with a burst of" +
                 "blueberry flavor will have you saying 'mmm...mmm... good'" +
-                "Scratch-made, freshly baked every morning.", 8.99m)
+                "Scratch-made, freshly baked every morning.", 8.99m);
+            menuItemThree.MealIngredients.Add(CafeIngredients.Blueberries);
+            menuItemThree.MealIngredients.Add(CafeIngredients.MuffinMix);
 
             _cafeRepo.AddMenuItem(menuItemOne);
             _cafeRepo.AddMenuItem(menuItemTwo);
