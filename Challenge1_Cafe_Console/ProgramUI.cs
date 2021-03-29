@@ -106,11 +106,54 @@ namespace Challenge1_Cafe_Console
                     $"");
             }
         }
-        
-        //Delete a cafe menu item
-        private void RemoveAMenuItem()
+
+//Delete a cafe menu item
+private void RemoveAMenuItem()
         {
             Console.Clear();
+            Console.WriteLine("Every menu needs to change it up every once in a while...\n" +
+                "Please review the current menu before making your selection");
+            ReadCurrentCafeMenu();
+            //Ask user for meal number they would like to delete
+            Console.WriteLine("Please enter the meal number of the menu item you would like to remove, then press enter.");
+            string selection = Console.ReadLine();
+            int selectedMealNumber = int.Parse(selection);
+            //confirm selection
+
+            //string familyFriendlyString = Console.ReadLine().ToLower();
+
+            //if (familyFriendlyString == "y")
+            //{
+            //    newContent.IsFamilyFriendly = true;
+            //}
+            //else
+            //{
+            //    newContent.IsFamilyFriendly = false;
+            //}
+
+            Console.WriteLine("Are you sure you would like to remove this item (It could make a tasty comeback)? y/n");
+            //if else based on choice
+            string confirmRemoval = Console.ReadLine().ToLower();
+
+            if(confirmRemoval == "y")
+            {
+                bool wasRemoved = _cafeRepo.DeleteMenuItem(selectedMealNumber);
+                if (wasRemoved)
+                {
+                    Console.WriteLine("Making room for better dishes on the menu.....................................\n" +
+                        "The menu item you selected is now deleted.");
+                }
+                else
+                {
+                    Console.WriteLine("I'm sorry the menu item you selected could not be deleted.\n" +
+                        "The meal item could have already been deleted or does not exist.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("I'm happy to hear this dish will be sticking around a little longer");
+            }
+            
         }
 
         //SeedContentList to prevent starting with an empty list of CafeMenu
