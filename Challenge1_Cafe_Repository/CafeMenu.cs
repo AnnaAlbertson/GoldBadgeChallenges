@@ -11,27 +11,13 @@ namespace Challenge1_Cafe_Repository
     public enum CafeIngredients
     {
         Eggs,
-        Hollandaise,
-        MapleSyrup,
-        Ham,
-        Bacon,
-        Sausage,
-        Chicken,
-        CrabCake,
-        Salmon,
-        EnglishMuffin,
-        Sourdough,
-        Wheat,
-        Potatoes,
-        Tomato,
         Spinach,
-        Avocado,
-        Lettuce,
-        Grits,
-        MixedFruit,
-        Havarti,
-        Swiss,
-        Brie
+        Feta,
+        SignatureSpices,
+        Hollandaise,
+        Bacon,
+        Blueberries,
+        MuffinMix
     }
 
     public class CafeMenu
@@ -52,13 +38,12 @@ namespace Challenge1_Cafe_Repository
         }
 
         //Overloaded constructor
-        public CafeMenu(int mealNumber, string mealName, string description, decimal price, List<CafeIngredients> mealIngredients)
+        public CafeMenu(int mealNumber, string mealName, string description, decimal price)
         {
             MealNumber = mealNumber;
             MealName = mealName;
             Description = description;
             Price = price;
-            MealIngredients = mealIngredients;
         }
     }
 }

@@ -7,14 +7,15 @@ using Challenge1_Cafe_Repository;
 
 namespace Challenge1_Cafe_Console
 {
-    class Program_UI
+    class ProgramUI
     {
         private CafeMenu_Repository _cafeRepo = new CafeMenu_Repository();
 
         //Run Method to start and run program
         public void Run()
         {
-        
+            SeedContentList();
+            Menu();
         }
 
         //Menu method
@@ -24,12 +25,22 @@ namespace Challenge1_Cafe_Console
         }
 
         //Create a cafe menu item
+        private void CreateNewMenuItem()
+        {
+
+        }
 
         //Read current cafe menu
+        private void ReadCurrentCafeMenu()
+        {
+
+        }
         
         //Delete a cafe menu item
+        private void RemoveAMenuItem()
+        {
 
-
+        }
 
         //SeedContentList to prevent starting with an empty list of CafeMenu
         private void SeedContentList()
