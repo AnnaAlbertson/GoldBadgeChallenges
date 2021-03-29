@@ -58,7 +58,7 @@ namespace Challenge1_Cafe_Console
                         keepRunning = false;
                         break;
                     default:
-                        Console.WriteLine("Please enter a valid number.");
+                        Console.WriteLine("Please enter a number listed above.");
                         break;
                 }
 
@@ -71,19 +71,30 @@ namespace Challenge1_Cafe_Console
         //Create a cafe menu item
         private void CreateNewMenuItem()
         {
+            Console.Clear();
 
         }
 
         //Read current cafe menu
         private void ReadCurrentCafeMenu()
         {
+            Console.Clear();
+            List<CafeMenu> currentCafeMenu = new List<CafeMenu>();
 
+            foreach (CafeMenu menuItem in currentCafeMenu)
+            {
+                Console.WriteLine($"Meal Number: {menuItem.MealNumber}\n" +
+                    $"Meal Name: {menuItem.MealName}/n" +
+                    $"Description: {menuItem.Description}/n" +
+                    $"Price: ${menuItem.Price}/n" +
+                    $"Ingredients: {menuItem.MealIngredients}");
+            }
         }
         
         //Delete a cafe menu item
         private void RemoveAMenuItem()
         {
-
+            Console.Clear();
         }
 
         //SeedContentList to prevent starting with an empty list of CafeMenu
