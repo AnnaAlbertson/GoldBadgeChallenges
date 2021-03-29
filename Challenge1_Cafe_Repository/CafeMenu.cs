@@ -22,6 +22,8 @@ namespace Challenge1_Cafe_Repository
         MuffinMix
     }
 
+    //private List<CafeIngredients> MealIngredients = new List<CafeIngredients>();
+
     public class CafeMenu
     {
         //Required menu items: meal number, meal name, description, list of ingredients, price
