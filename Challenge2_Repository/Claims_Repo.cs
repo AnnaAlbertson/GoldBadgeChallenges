@@ -26,9 +26,9 @@ namespace Challenge2_Repository
 
         }
         //To create claim 
-        public void CreateClaim()
+        public void CreateClaim(Claims newClaim)
         {
-
+            _listOfClaims.Add(newClaim);
         }
     }
 }
