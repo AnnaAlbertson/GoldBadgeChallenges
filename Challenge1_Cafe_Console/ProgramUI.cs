@@ -120,17 +120,6 @@ private void RemoveAMenuItem()
             int selectedMealNumber = int.Parse(selection);
             //confirm selection
 
-            //string familyFriendlyString = Console.ReadLine().ToLower();
-
-            //if (familyFriendlyString == "y")
-            //{
-            //    newContent.IsFamilyFriendly = true;
-            //}
-            //else
-            //{
-            //    newContent.IsFamilyFriendly = false;
-            //}
-
             Console.WriteLine("Are you sure you would like to remove this item (It could make a tasty comeback)? y/n");
             //if else based on choice
             string confirmRemoval = Console.ReadLine().ToLower();
