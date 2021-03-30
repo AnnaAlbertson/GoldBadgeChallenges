@@ -11,9 +11,9 @@ namespace Challenge2_Repository
         List<Claims> _listOfClaims = new List<Claims>();
 
         //Retrieve list of claims to use in displaying the claims
-        public void GetClaimsList()
+        public List<Claims> GetClaimsList()
         {
-
+            return _listOfClaims;
         }
         //Update to assist in the queue option in UI
         public void UpdateClaims()
