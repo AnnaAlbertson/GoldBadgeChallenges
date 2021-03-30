@@ -8,27 +8,27 @@ namespace Challenge2_Repository
 {
     class Claims_Repo
     {
-        List<Claims> _listOfClaims = new List<Claims>();
+        Queue<Claims> _queueOfClaims = new Queue<Claims>();
 
         //Retrieve list of claims to use in displaying the claims
-        public List<Claims> GetClaimsList()
+        public Queue<Claims> GetClaimsList()
         {
-            return _listOfClaims;
+            return _queueOfClaims;
         }
         //Update to assist in the queue option in UI
-        public void UpdateClaims()
+        public void PeekNextClaim()
         {
-
+            _queueOfClaims.Peek();   
         }
         //To remove a claim once it has been completed in the queue in UI
-        public void DeleteClaims()
+        public void DequeueClaim()
         {
-
+            _queueOfClaims.Dequeue();   
         }
         //To create claim 
-        public void CreateClaim(Claims newClaim)
+        public void EnquequeClaim(Claims newClaim)
         {
-            _listOfClaims.Add(newClaim);
+            _queueOfClaims.Enqueue(newClaim);
         }
     }
 }
