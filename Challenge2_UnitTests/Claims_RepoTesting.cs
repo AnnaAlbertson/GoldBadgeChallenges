@@ -21,6 +21,7 @@ namespace Challenge2_UnitTests
         [TestMethod]
         public void Test_CreateClaim()
         {
+
         }
     }
 }
