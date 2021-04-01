@@ -32,11 +32,11 @@ namespace Challenge2_Repository
             } 
         }
 
-        Claims()
+        public Claims()
         {
 
         }
-        Claims(int claimID, ClaimType typeOfClaim, string description, decimal claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
+        public Claims(int claimID, ClaimType typeOfClaim, string description, decimal claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
         {
             ClaimID = claimID;
             TypeOfClaim = typeOfClaim;

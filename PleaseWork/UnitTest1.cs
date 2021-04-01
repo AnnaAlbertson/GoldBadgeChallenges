@@ -19,5 +19,10 @@ namespace PleaseWork
 
             Console.WriteLine(dict);
         }
+        [TestMethod]
+        public void MyTestMethod()
+        {
+
+        }
     }
 }
