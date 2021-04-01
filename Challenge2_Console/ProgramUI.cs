@@ -10,10 +10,15 @@ namespace Challenge2_Console
     {
         public void Run()
         {
-
+            SeedClaimQueue();
+            Menu();
         }
 
         public void Menu()
+        {
+
+        }
+        public void SeedClaimQueue()
         {
 
         }
