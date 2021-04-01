@@ -65,21 +65,33 @@ namespace Challenge2_Console
         }
         private void SeeClaims()
         {
-            repo.GetClaimsQueue();
+            Console.Clear();
+            Queue<Claims> claimsQueue = repo.GetClaimsQueue();
+
+            // To display in a table I found a video to help : https://www.youtube.com/watch?v=Bni04KLDOcg&list=PL1iWr76IK-QXzw1Ei3CzIilzYID6Gl83d&index=2&t=104s
+            foreach (Claims claim in claimsQueue)
+            {
+                Console.WriteLine("ClaimID:{0} \nType:{1} \nDescription:{2} \nAmount:${3} \nDateOfAccident:{4} \nDateOfClaim:{5} \nIsValid:{6}", claim.ClaimID, claim.TypeOfClaim, claim.Description, claim.ClaimAmount, claim.DateOfIncident, claim.DateOfClaim);
+                Console.Write("Do you want to deal with this claim now? (y/n)");
+            }
         }
         private void NextClaim()
         {
-
+            Console.Clear();
         }
         private void NewClaim()
         {
-
+            Console.Clear();
         }
         private void SeedClaimQueue()
         {
             Claims claim1 = new Claims(1, ClaimType.Car, "Car accident on 465.", 400.00m, new DateTime(2018, 04, 25), new DateTime(2018, 04, 11));
             Claims claim2 = new Claims(2, ClaimType.Home, "House fire in kitchen.", 4000.00m, new DateTime(2018, 04, 11), new DateTime(2018, 04, 12));
             Claims claim3 = new Claims(3, ClaimType.Theft, "Stolen pancakes.", 4.00m, new DateTime(2018, 04, 27), new DateTime(2018, 06, 1));
+
+            repo.EnquequeClaim(claim1);
+            repo.EnquequeClaim(claim2);
+            repo.EnquequeClaim(claim3);
         }   
     }
 }
