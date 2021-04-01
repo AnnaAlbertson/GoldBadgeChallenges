@@ -65,7 +65,7 @@ namespace Challenge2_Console
         }
         private void SeeClaims()
         {
-
+            repo.GetClaimsQueue();
         }
         private void NextClaim()
         {
@@ -77,7 +77,9 @@ namespace Challenge2_Console
         }
         private void SeedClaimQueue()
         {
-            Claims claim1 = new Claims();
-        }        
+            Claims claim1 = new Claims(1, ClaimType.Car, "Car accident on 465.", 400.00m, new DateTime(2018, 04, 25), new DateTime(2018, 04, 11));
+            Claims claim2 = new Claims(2, ClaimType.Home, "House fire in kitchen.", 4000.00m, new DateTime(2018, 04, 11), new DateTime(2018, 04, 12));
+            Claims claim3 = new Claims(3, ClaimType.Theft, "Stolen pancakes.", 4.00m, new DateTime(2018, 04, 27), new DateTime(2018, 06, 1));
+        }   
     }
 }
