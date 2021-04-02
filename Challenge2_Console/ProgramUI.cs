@@ -71,13 +71,13 @@ namespace Challenge2_Console
             // To display in a table I found a video to help : https://www.youtube.com/watch?v=Bni04KLDOcg&list=PL1iWr76IK-QXzw1Ei3CzIilzYID6Gl83d&index=2&t=104s
             foreach (Claims claim in claimsQueue)
             {
-                Console.WriteLine("\nClaimID:{0} " +
-                    "\nType:{1} " +
-                    "\nDescription:{2} " +
-                    "\nAmount:${3} " +
-                    "\nDateOfAccident:{4} " +
-                    "\nDateOfClaim:{5} " +
-                    "\nIsValid:{6}", 
+                Console.WriteLine("\nClaimID: {0} " +
+                    "\nType: {1} " +
+                    "\nDescription: {2} " +
+                    "\nAmount: ${3} " +
+                    "\nDateOfAccident: {4} " +
+                    "\nDateOfClaim: {5} " +
+                    "\nIsValid: {6}", 
                     claim.ClaimID, 
                     claim.TypeOfClaim, 
                     claim.Description, 
@@ -98,8 +98,8 @@ namespace Challenge2_Console
                 $"\nType:{claim.TypeOfClaim} " +
                 $"\nDescription:{claim.Description} " +
                 $"\nAmount:${claim.ClaimAmount} " +
-                $"\nDateOfAccident:{claim.DateOfIncident} " +
-                $"\nDateOfClaim:{claim.DateOfClaim} " +
+                $"\nDateOfAccident:{claim.DateOfIncident.ToString("d")} " +
+                $"\nDateOfClaim:{claim.DateOfClaim.ToString("d")} " +
                 $"\nIsValid:{claim.IsValid}");
 
             TakeCareOfClaim();
