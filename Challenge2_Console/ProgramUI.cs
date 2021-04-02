@@ -160,7 +160,7 @@ namespace Challenge2_Console
             newClaim.DateOfIncident = DateTime.Parse(accidentDateString);
             Console.Write("\nDate of Claim: ");
             string claimDateString = Console.ReadLine();
-            newClaim.DateOfClaim = Convert.ToDateTime(claimDateString);
+            newClaim.DateOfClaim = DateTime.Parse(claimDateString);
 
             // Is Valid print (if else statement/ "This claim is valid." or "This claim is not valid."     
             Console.Write("Is Valid: " + newClaim.IsValid);
