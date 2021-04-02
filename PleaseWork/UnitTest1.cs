@@ -16,8 +16,6 @@ namespace PleaseWork
             badge.Add("A-3");
             badge.Add("A-4");
             dict.Add("12353", badge);
-
-            Console.WriteLine(dict);
         }
         [TestMethod]
         public void MyTestMethod()

@@ -128,15 +128,52 @@ namespace Challenge2_Console
         }
         private void NewClaim()
         {
-
             Console.Clear();
+            Claims newClaim = new Claims();
+
+            // Gather Properties
+            // Claim ID
+            Console.Write("\nPlease enter the ClaimID: ");
+            string claimIDInput = Console.ReadLine();
+            newClaim.ClaimID = Convert.ToInt32(claimIDInput);
+            
+            // Collecting enum
+            Console.WriteLine("\nPlease enter the number matching the type of claim: \n" +
+                "\n1) Car" +
+                "\n2) Home" +
+                "\n3) Theft");
+            string typeOfClaimAsString = Console.ReadLine();
+            int typeOfClaimAsInt = int.Parse(typeOfClaimAsString);
+            newClaim.TypeOfClaim = (ClaimType)typeOfClaimAsInt;
+            
+            //Description
+            Console.Write("\nPlease enter the Description: ");
+            newClaim.Description = Console.ReadLine();
+            Console.Write("\nPlease enter the Claim Amount (0.00 format): ");
+            string claimAmountString = Console.ReadLine();
+            newClaim.ClaimAmount = decimal.Parse(claimAmountString);
+            
+            //Dates
+            Console.Write("\nPlease enter the Date of Accident (yyyy/mm/dd): ");
+            string accidentDateString = Console.ReadLine();
+            newClaim.DateOfIncident = DateTime.Parse(accidentDateString);
+            Console.Write("\nPlease enter the Date of Claim: ");
+            string claimDateString = Console.ReadLine();
+            newClaim.DateOfIncident = Convert.ToDateTime(claimDateString);
+
+            // Is Valid print    
+            Console.Write("Is Valid: " + newClaim.IsValid);
+
+            repo.EnquequeClaim(newClaim);
         }
         private void SeedClaimQueue()
         {
+            // Seeding Queue
             Claims claim1 = new Claims(1, ClaimType.Car, "Car accident on 465.", 400.00m, new DateTime(2018, 04, 25), new DateTime(2018, 04, 11));
             Claims claim2 = new Claims(2, ClaimType.Home, "House fire in kitchen.", 4000.00m, new DateTime(2018, 04, 11), new DateTime(2018, 04, 12));
             Claims claim3 = new Claims(3, ClaimType.Theft, "Stolen pancakes.", 4.00m, new DateTime(2018, 04, 27), new DateTime(2018, 06, 1));
 
+            // Adding to Queue
             repo.EnquequeClaim(claim1);
             repo.EnquequeClaim(claim2);
             repo.EnquequeClaim(claim3);
