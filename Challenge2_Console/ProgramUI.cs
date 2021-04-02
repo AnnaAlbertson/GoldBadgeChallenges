@@ -18,6 +18,7 @@ namespace Challenge2_Console
 
         private void Menu()
         {
+            Console.Clear();
             //While Loop to keep program running
             bool keepRunning = true;
             while (keepRunning)
@@ -58,7 +59,7 @@ namespace Challenge2_Console
                         break;
                 }
 
-                Console.WriteLine("Please press any key to continue...");
+                Console.WriteLine("\nPlease press any key to continue...");
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -67,20 +68,67 @@ namespace Challenge2_Console
         {
             Console.Clear();
             Queue<Claims> claimsQueue = repo.GetClaimsQueue();
-
             // To display in a table I found a video to help : https://www.youtube.com/watch?v=Bni04KLDOcg&list=PL1iWr76IK-QXzw1Ei3CzIilzYID6Gl83d&index=2&t=104s
             foreach (Claims claim in claimsQueue)
             {
-                Console.WriteLine("ClaimID:{0} \nType:{1} \nDescription:{2} \nAmount:${3} \nDateOfAccident:{4} \nDateOfClaim:{5} \nIsValid:{6}", claim.ClaimID, claim.TypeOfClaim, claim.Description, claim.ClaimAmount, claim.DateOfIncident, claim.DateOfClaim);
-                Console.Write("Do you want to deal with this claim now? (y/n)");
+                Console.WriteLine("\nClaimID:{0} " +
+                    "\nType:{1} " +
+                    "\nDescription:{2} " +
+                    "\nAmount:${3} " +
+                    "\nDateOfAccident:{4} " +
+                    "\nDateOfClaim:{5} " +
+                    "\nIsValid:{6}", 
+                    claim.ClaimID, 
+                    claim.TypeOfClaim, 
+                    claim.Description, 
+                    claim.ClaimAmount, 
+                    claim.DateOfIncident.ToString("d"), 
+                    claim.DateOfClaim.ToString("d"), 
+                    claim.IsValid);
             }
         }
         private void NextClaim()
         {
             Console.Clear();
+            // Collecting need variables and methods
+            Queue<Claims> claimsQueue = repo.GetClaimsQueue();
+            Claims claim = claimsQueue.Peek();
+            // Display to user
+            Console.WriteLine($"\nClaimID:{claim.ClaimID} " +
+                $"\nType:{claim.TypeOfClaim} " +
+                $"\nDescription:{claim.Description} " +
+                $"\nAmount:${claim.ClaimAmount} " +
+                $"\nDateOfAccident:{claim.DateOfIncident} " +
+                $"\nDateOfClaim:{claim.DateOfClaim} " +
+                $"\nIsValid:{claim.IsValid}");
+
+            TakeCareOfClaim();
+            Console.Clear();
+        }
+        private void TakeCareOfClaim()
+        {
+            Console.Write("\nDo you want to deal with this claim now? (y/n)");
+            string response = Console.ReadLine();
+            if (response == "y")
+            {
+                repo.DequeueClaim();
+                Console.WriteLine("Thank you for taking care of the claim. \nThis claim has now been removed.");
+                Console.ReadKey();
+            }
+            else if (response == "n")
+            {
+                Console.WriteLine("The claim will remain at the top of the queue. \nPlease take care of the claim when you are ready.");
+                Console.ReadKey();
+                Menu();
+            }
+            else
+            {
+                Console.WriteLine("Please enter 'y' for yes or 'n' for no...");
+            }
         }
         private void NewClaim()
         {
+
             Console.Clear();
         }
         private void SeedClaimQueue()

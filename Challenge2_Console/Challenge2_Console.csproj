@@ -51,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Challenge1_Cafe_Repository\Challenge1_Repository.csproj">
-      <Project>{c33a9cf9-ffe2-47ba-b14d-48fa4eaa8d0d}</Project>
-      <Name>Challenge1_Repository</Name>
+    <ProjectReference Include="..\Challenge2_Repository\Challenge2_Repository.csproj">
+      <Project>{2d298d72-747c-4e5d-a892-4d3ae2a49701}</Project>
+      <Name>Challenge2_Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

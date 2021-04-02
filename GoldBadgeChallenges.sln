@@ -15,10 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge2_Repository", "Ch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge2_UnitTests", "Challenge2_UnitTests\Challenge2_UnitTests.csproj", "{77C96A6E-7DB6-47F6-8803-C7281B89C588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Experiments", "Experiments\Experiments.csproj", "{7D4ECF0E-6BF6-4178-B3E5-91FFE3CA31A9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Experiments2", "Experiments2\Experiments2.csproj", "{219D448F-FFF8-4F13-B7A0-B398DE4E05FD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PleaseWork", "PleaseWork\PleaseWork.csproj", "{C35472F0-F3AB-4594-9EE3-2498B7E25317}"
 EndProject
 Global
@@ -51,14 +47,6 @@ Global
 		{77C96A6E-7DB6-47F6-8803-C7281B89C588}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77C96A6E-7DB6-47F6-8803-C7281B89C588}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77C96A6E-7DB6-47F6-8803-C7281B89C588}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D4ECF0E-6BF6-4178-B3E5-91FFE3CA31A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D4ECF0E-6BF6-4178-B3E5-91FFE3CA31A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D4ECF0E-6BF6-4178-B3E5-91FFE3CA31A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D4ECF0E-6BF6-4178-B3E5-91FFE3CA31A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{219D448F-FFF8-4F13-B7A0-B398DE4E05FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{219D448F-FFF8-4F13-B7A0-B398DE4E05FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{219D448F-FFF8-4F13-B7A0-B398DE4E05FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{219D448F-FFF8-4F13-B7A0-B398DE4E05FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C35472F0-F3AB-4594-9EE3-2498B7E25317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C35472F0-F3AB-4594-9EE3-2498B7E25317}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C35472F0-F3AB-4594-9EE3-2498B7E25317}.Release|Any CPU.ActiveCfg = Release|Any CPU
