@@ -133,11 +133,12 @@ namespace Challenge2_Console
 
             // Gather Properties
             // Claim ID
-            Console.Write("\nPlease enter the ClaimID: ");
+            Console.Write("\nEnter the claim id: ");
             string claimIDInput = Console.ReadLine();
             newClaim.ClaimID = Convert.ToInt32(claimIDInput);
             
             // Collecting enum
+            // Need a way to collect string and convert to enum (switch case maybe??)
             Console.WriteLine("\nPlease enter the number matching the type of claim: \n" +
                 "\n1) Car" +
                 "\n2) Home" +
@@ -147,21 +148,21 @@ namespace Challenge2_Console
             newClaim.TypeOfClaim = (ClaimType)typeOfClaimAsInt;
             
             //Description
-            Console.Write("\nPlease enter the Description: ");
+            Console.Write("\nEnter a claim description: ");
             newClaim.Description = Console.ReadLine();
-            Console.Write("\nPlease enter the Claim Amount (0.00 format): ");
+            Console.Write("\nAmount of Damage: $");
             string claimAmountString = Console.ReadLine();
             newClaim.ClaimAmount = decimal.Parse(claimAmountString);
             
             //Dates
-            Console.Write("\nPlease enter the Date of Accident (yyyy/mm/dd): ");
+            Console.Write("\nDate of Accident: ");
             string accidentDateString = Console.ReadLine();
             newClaim.DateOfIncident = DateTime.Parse(accidentDateString);
-            Console.Write("\nPlease enter the Date of Claim: ");
+            Console.Write("\nDate of Claim: ");
             string claimDateString = Console.ReadLine();
-            newClaim.DateOfIncident = Convert.ToDateTime(claimDateString);
+            newClaim.DateOfClaim = Convert.ToDateTime(claimDateString);
 
-            // Is Valid print    
+            // Is Valid print (if else statement/ "This claim is valid." or "This claim is not valid."     
             Console.Write("Is Valid: " + newClaim.IsValid);
 
             repo.EnquequeClaim(newClaim);
