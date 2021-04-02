@@ -8,14 +8,38 @@ namespace Challenge3_Console
 {
     class ProgramUI
     { // Run method containing methods in UI
-        public void Run()
+        private void Run()
         {
+            SeedBadges();
             Menu();
         }
-        public void Menu()
+        private void Menu()
         {
 
         }
-        
+        private void AddBadge()
+        {
+
+        }
+        private void EditBadge()
+        {
+
+        }
+        private void RemoveDoor()
+        {
+
+        }
+        private void AddDoor()
+        {
+
+        }
+        private void ListBadges()
+        {
+
+        }
+        private void SeedBadges()
+        {
+
+        }
     }
 }
