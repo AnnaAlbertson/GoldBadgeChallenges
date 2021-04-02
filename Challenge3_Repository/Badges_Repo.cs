@@ -8,10 +8,10 @@ namespace Challenge3_Repository
 {
     class Badges_Repo
     {
-        private Dictionary<string, List<string>> badgesDictiionary = new Dictionary<string, List<string>>();
-        public void CreateBadge()
+        private Dictionary<int, List<string>> badgesDictionary = new Dictionary<int, List<string>>();
+        public void Create(Badge newBadge)
         {
-
+            badgesDictionary.Add(newBadge.BadgeID, newBadge.DoorNames);
         }
         public void UpdateBadge()
         {
@@ -21,15 +21,9 @@ namespace Challenge3_Repository
         {
 
         }
-        public void AddBadgeIDKey()
+        public Dictionary<int, List<string>> GetAllBadges()
         {
-        }
-        public void AddDoorAccessValues()
-        {
-        }
-        public void GetAllBadges()
-        {
-
+            return badgesDictionary;
         }
     }
 }
