@@ -12,6 +12,7 @@ namespace Challenge4_Console
         private Outing_Repo repo = new Outing_Repo();
         public void Run()
         {
+            SeedOutings();
             Menu();
         }
         private void Menu()
@@ -92,6 +93,16 @@ namespace Challenge4_Console
         private void CombinedCostByCategory()
         {
 
+        }
+        private void SeedOutings()
+        {
+            Outing bowlingTournament = new Outing(EventType.Bowling, 45, new DateTime(05 / 15 / 2020), 89.70m);
+            Outing dayAtCedarPoint = new Outing(EventType.AmusementPark, 180, new DateTime(06 / 02 / 2020), 220.50m);
+            Outing valentinesConcert = new Outing(EventType.Concert, 36, new DateTime(02/16/2020), 145.65m);
+
+            repo.AddOuting(bowlingTournament);
+            repo.AddOuting(dayAtCedarPoint);
+            repo.AddOuting(valentinesConcert);
         }
     }
 }
