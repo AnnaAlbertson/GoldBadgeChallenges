@@ -10,6 +10,8 @@ namespace Challenge4_Console
     {
         static void Main(string[] args)
         {
+            ProgramUI program = new ProgramUI();
+            program.Run();
         }
     }
 }
