@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Challenge3_Repository;
 
 namespace Challenge3_Console
 {
     class ProgramUI
-    { // Run method containing methods in UI
-        private void Run()
+    { 
+        private Badges_Repo repo = new Badges_Repo();
+        // Run method containing methods in UI
+        public void Run()
         {
-            SeedBadges();
+            //SeedBadges();
             Menu();
         }
         private void Menu()
@@ -36,15 +39,15 @@ namespace Challenge3_Console
                 {
                     case "1":
                         // Add a badge
-                        
+                        AddBadge();
                         break;
                     case "2":
                         // Edit a badge
-                        
+                        EditBadge();
                         break;
                     case "3":
                         // List all badges
-                        
+                        ListBadges();
                         break;
                     case "4":
                         // leaving
@@ -61,7 +64,36 @@ namespace Challenge3_Console
         }
         private void AddBadge()
         {
+            //new instance of badge
+            Badge newBadge = new Badge();
 
+            // Adding key value for badge ID
+            Console.Write("What is the number on the badge: ");
+            string badgeIDString = Console.ReadLine();
+            int badgeIDInt = int.Parse(badgeIDString);
+            newBadge.BadgeID = badgeIDInt;
+
+            AddDoor();
+            
+            //Console.Write("List a door it needs access to: ");
+            //string doorResponse = Console.ReadLine();
+            //// newbadge.DoorNames = 
+            //Console.Write("Any other doors (y/n)? ");
+            //string otherDoorResponse = Console.ReadLine().ToLower(); 
+            //if (otherDoorResponse == "y")
+            //{
+            //    Console.Write("List a door it needs access to: ");
+            //}
+            //else if (otherDoorResponse == "n")
+            //{
+            //    repo.Create(newBadge);
+            //    Menu();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Please enter 'y' for yes or 'n' for no");
+            //}
+            repo.Create(newBadge);
         }
         private void EditBadge()
         {
@@ -71,9 +103,34 @@ namespace Challenge3_Console
         {
 
         }
-        private void AddDoor()
+        private List<string> AddDoor()
         {
+            List<string> doorAccess = new List<string>();
 
+            bool needsDoor = true;
+            while(needsDoor)
+            {
+                Console.Write("List a door that it needs access to: ");
+                string doorAccessResponse = Console.ReadLine();
+                doorAccess.Add(doorAccessResponse);
+
+                Console.Write("Any other doors (y/n)? ");
+                string otherDoorResponse = Console.ReadLine().ToLower();
+                if (otherDoorResponse == "y")
+                {
+                    break;
+                }
+                else if (otherDoorResponse == "n")
+                {
+                    return doorAccess;
+                    needsDoor = false;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter 'y' for yes or 'n' for no");
+                }
+            }
+            return null;
         }
         private void ListBadges()
         {

@@ -12,12 +12,12 @@ namespace Challenge3_Repository
         public List<string> DoorNames { get; set; }
         public string BadgeName { get; set; }
 
-        Badge() { }
-        Badge(int badgeID, List<string> doorNames)
+        public Badge() { }
+        public Badge(int badgeID, List<string> doorNames)
         {
 
         }
-        Badge(int badgeID, List<string> doorNames, string badgeName)
+        public Badge(int badgeID, List<string> doorNames, string badgeName)
         {
 
         }
