@@ -13,7 +13,7 @@ namespace Challenge4_Repository
         AmusementPark,
         Concert
     }
-    class Outing
+    public class Outing
     {
         public EventType TypeOfEvent { get; set; }
         public int PeopleInAttendance { get; set; }
@@ -26,6 +26,16 @@ namespace Challenge4_Repository
                 decimal costOfEvent = PeopleInAttendance * TotalCostPerPerson;
                 return costOfEvent;
             }
+        }
+
+        public Outing () { }
+
+        public Outing (EventType typeOfEvent, int peopleInAttendance, DateTime eventDate, decimal totalCostPerPerson)
+        {
+            TypeOfEvent = typeOfEvent;
+            PeopleInAttendance = peopleInAttendance;
+            EventDate = eventDate;
+            TotalCostPerPerson = totalCostPerPerson;
         }
     }
 }
