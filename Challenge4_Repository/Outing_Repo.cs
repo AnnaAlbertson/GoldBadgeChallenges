@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Challenge4_Repository
 {
-    public class Class1
+    public class Outing_Repo
     {
     }
 }
