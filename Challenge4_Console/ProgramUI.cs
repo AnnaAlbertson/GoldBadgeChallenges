@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Challenge4_Repository;
 
 namespace Challenge4_Console
 {
@@ -61,7 +62,8 @@ namespace Challenge4_Console
         }
         private void DisplayOutings()
         {
-
+            Console.Clear();
+            List<Outing> listOfOutings = 
         }
         private void AddOuting()
         {
