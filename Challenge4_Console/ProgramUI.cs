@@ -135,10 +135,25 @@ namespace Challenge4_Console
         }
         private void Calculations()
         {
+            Console.Clear();
             Console.WriteLine("Would you like to view...\n" +
                 "1) the combined cost of all outings\n" +
-                "or" +
+                "or\n" +
                 "2) the cost of outings by type");
+            string calculationChoice = Console.ReadLine();
+            if(calculationChoice == "1")
+            {
+                CombinedCostOutings();
+            }
+            else if(calculationChoice == "2")
+            {
+                CombinedCostByCategory();
+            }
+            else
+            {
+                Console.WriteLine("Please enter either 1 or 2.");
+                Calculations();
+            }
         }
         private void CombinedCostOutings()
         {
