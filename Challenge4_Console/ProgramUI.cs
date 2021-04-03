@@ -9,6 +9,7 @@ namespace Challenge4_Console
 {
     class ProgramUI
     {
+        private Outing_Repo repo = new Outing_Repo();
         public void Run()
         {
             Menu();
@@ -63,7 +64,15 @@ namespace Challenge4_Console
         private void DisplayOutings()
         {
             Console.Clear();
-            List<Outing> listOfOutings = 
+            List<Outing> listOfOutings = repo.GetListOfOutings();
+            foreach(Outing outing in listOfOutings)
+            {
+                Console.WriteLine($"Event Type: {outing.TypeOfEvent}\n" +
+                    $"Number of people attended: {outing.PeopleInAttendance}\n" +
+                    $"Date of event: {outing.EventDate}\n" +
+                    $"Total cost per person: ${outing.TotalCostPerPerson}\n" +
+                    $"Total cost for the event: ${outing.TotalCostEvent}\n");
+            }
         }
         private void AddOuting()
         {
