@@ -70,14 +70,68 @@ namespace Challenge4_Console
             {
                 Console.WriteLine($"Event Type: {outing.TypeOfEvent}\n" +
                     $"Number of people attended: {outing.PeopleInAttendance}\n" +
-                    $"Date of event: {outing.EventDate}\n" +
+                    $"Date of event: {outing.EventDate.ToString("d")}\n" +
                     $"Total cost per person: ${outing.TotalCostPerPerson}\n" +
                     $"Total cost for the event: ${outing.TotalCostEvent}\n");
             }
         }
         private void AddOuting()
         {
+            Console.Clear();
+            // Create new instance of Outing
+            Outing newOuting = new Outing();
 
+            // Gather properties
+            // Type of Event
+            Console.Write("What type of event is the outing: \n" +
+                "1) Golf\n" +
+                "2) Bowling\n" +
+                "3) Amusement Park\n" +
+                "4) Concert\n");
+            string typeOfEventString = Console.ReadLine();
+            switch (typeOfEventString)
+            {
+                case "1":
+                    // Golf
+                    newOuting.TypeOfEvent = EventType.Golf;
+                    break;
+                case "2":
+                    // Bowling
+                    newOuting.TypeOfEvent = EventType.Bowling;
+                    break;
+                case "3":
+                    // Amusement Park
+                    newOuting.TypeOfEvent = EventType.AmusementPark;
+                    break;
+                case "4":
+                    // Concert
+                    newOuting.TypeOfEvent = EventType.Concert;
+                    break;
+                default:
+                    // For error catching
+                    Console.WriteLine("Please enter an option listed above");
+                    break;
+            }
+            // Number of people attended
+            Console.Write("Number of people in attendance: ");
+            string attendanceString = Console.ReadLine();
+            int attendanceInt = int.Parse(attendanceString);
+            newOuting.PeopleInAttendance = attendanceInt;
+            // Date
+            Console.Write("Date of event: ");
+            string dateString = Console.ReadLine();
+            DateTime dateDateTime = DateTime.Parse(dateString);
+            newOuting.EventDate = dateDateTime;
+            // Total cost per person
+            Console.Write("Total cost per person: ");
+            string costPerPersonString = Console.ReadLine();
+            decimal costPerPersonDecimal = decimal.Parse(costPerPersonString);
+            newOuting.TotalCostPerPerson = costPerPersonDecimal;
+
+            //Display total cost of event
+            Console.WriteLine("The total cost of the event you entered is: $" + newOuting.TotalCostEvent);
+
+            repo.AddOuting(newOuting);
         }
         private void Calculations()
         {
@@ -96,9 +150,9 @@ namespace Challenge4_Console
         }
         private void SeedOutings()
         {
-            Outing bowlingTournament = new Outing(EventType.Bowling, 45, new DateTime(05 / 15 / 2020), 89.70m);
-            Outing dayAtCedarPoint = new Outing(EventType.AmusementPark, 180, new DateTime(06 / 02 / 2020), 220.50m);
-            Outing valentinesConcert = new Outing(EventType.Concert, 36, new DateTime(02/16/2020), 145.65m);
+            Outing bowlingTournament = new Outing(EventType.Bowling, 45, new DateTime(2020, 05, 15), 89.70m);
+            Outing dayAtCedarPoint = new Outing(EventType.AmusementPark, 180, new DateTime(2020, 06, 02), 220.50m);
+            Outing valentinesConcert = new Outing(EventType.Concert, 36, new DateTime(2020, 02, 14), 145.65m);
 
             repo.AddOuting(bowlingTournament);
             repo.AddOuting(dayAtCedarPoint);
