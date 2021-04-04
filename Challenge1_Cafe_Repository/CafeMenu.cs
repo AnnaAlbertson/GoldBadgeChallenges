@@ -8,19 +8,19 @@ namespace Challenge1_Cafe_Repository
 {
     //Enum for the ingredients, because most restaurants have ingredients they reuse over and over in other dishes
     //Stretch goal:Add method to add to enum while console app is running
-    public enum CafeIngredients
-    {
-        Eggs,
-        Spinach,
-        Feta,
-        SignatureSpices,
-        Hollandaise,
-        EnglishMuffin,
-        CrabCakes,
-        Bacon,
-        Blueberries,
-        MuffinMix
-    }
+    //public enum CafeIngredients - didn't qutie work the way I wanted it to
+    //{
+    //    Eggs,
+    //    Spinach,
+    //    Feta,
+    //    SignatureSpices,
+    //    Hollandaise,
+    //    EnglishMuffin,
+    //    CrabCakes,
+    //    Bacon,
+    //    Blueberries,
+    //    MuffinMix
+    //}
 
     //private List<CafeIngredients> MealIngredients = new List<CafeIngredients>();
 
@@ -33,7 +33,7 @@ namespace Challenge1_Cafe_Repository
         public string Description { get; set; }
         public decimal Price { get; set; }
         //Got the idea to make a List<enum> as a property when I talked to Austin for a checkup
-        public List<CafeIngredients> MealIngredients { get; set; }
+        public string MealIngredients { get; set; }
 
         //Empty constructor
         public CafeMenu()
@@ -42,12 +42,13 @@ namespace Challenge1_Cafe_Repository
         }
 
         //Overloaded constructor
-        public CafeMenu(int mealNumber, string mealName, string description, decimal price)
+        public CafeMenu(int mealNumber, string mealName, string description, decimal price, string mealIngredients)
         {
             MealNumber = mealNumber;
             MealName = mealName;
             Description = description;
             Price = price;
+            MealIngredients = mealIngredients;
         }
     }
 }

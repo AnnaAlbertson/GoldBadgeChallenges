@@ -75,15 +75,20 @@ namespace Challenge1_Cafe_Console
             CafeMenu newMenuItem = new CafeMenu();
 
             //Prompt user for the properties
+            // Meal Number
             Console.WriteLine("Please enter the meal number of your new menu item followed by the enter key...");
             newMenuItem.MealNumber = int.Parse(Console.ReadLine());
+            // Meal Name
             Console.WriteLine("Please enter the name of your new menu item followed by the enter key...");
             newMenuItem.MealName = Console.ReadLine();
+            // Description
             Console.WriteLine("Please enter the description of your new menu item followed by the enter key...");
             newMenuItem.Description = Console.ReadLine();
-
-            //Working out how to get user input and add to MealIngredients
-            //newMenuItem.MealIngredients = Console.ReadLine();
+            //Working out how to get user input and add to MealIngredients from List<SpecificEnum> didn't wuite get there in time
+            // So, I changed it to a regular string
+            Console.WriteLine("Please enter the ingredients in this meal: ");
+            newMenuItem.MealIngredients = Console.ReadLine();
+            // Price
             Console.WriteLine("Please enter the price of your new menu item followed by the enter key...");
             newMenuItem.Price = decimal.Parse(Console.ReadLine());
 
@@ -151,37 +156,24 @@ private void RemoveAMenuItem()
             CafeMenu menuItemOne = new CafeMenu(1, "Spinach Feta Omelette Cups",
                 "An order of delectable baked eggs in the form of muffin bottoms\n" +
                 "with all the great flavors of a perfectly cooked omelette filled\n" +
-                "with our signature blend of spices, spinach, and feta.", 9.79m);
+                "with our signature blend of spices, spinach, and feta.", 9.79m, "eggs, spinach, feta");
 
             _cafeRepo.AddMenuItem(menuItemOne);
-
-            //menuItemOne.MealIngredients.Add(CafeIngredients.Eggs);
-            //menuItemOne.MealIngredients.Add(CafeIngredients.Spinach);
-            //menuItemOne.MealIngredients.Add(CafeIngredients.Feta);
 
             CafeMenu menuItemTwo = new CafeMenu(2, "Crab Cake Benedict",
                 "Our famous crab cakes on an english muffin topped with a\n" +
                 "beautifully poached egg and some house-made hollandaise\n" +
-                "sauce served with sauteed spinach and bacon.", 13.89m);
+                "sauce served with sauteed spinach and bacon.", 13.89m, "english muffin, crab cakes, " +
+                "eggs, hollandaise, spinach, bacon");
 
             _cafeRepo.AddMenuItem(menuItemTwo);
-
-            //menuItemTwo.MealIngredients.Add(CafeIngredients.EnglishMuffin);
-            //menuItemTwo.MealIngredients.Add(CafeIngredients.CrabCakes);
-            //menuItemTwo.MealIngredients.Add(CafeIngredients.Eggs);
-            //menuItemTwo.MealIngredients.Add(CafeIngredients.Hollandaise);
-            //menuItemTwo.MealIngredients.Add(CafeIngredients.Spinach);
-            //menuItemTwo.MealIngredients.Add(CafeIngredients.Bacon);
 
             CafeMenu menuItemThree = new CafeMenu(3, "Blueberry Muffins",
                 "These perfectly crumbly, decadent muffins with a burst of\n" +
                 "blueberry flavor will have you saying 'mmm...mmm... good'\n" +
-                "Scratch-made, freshly baked every morning.", 8.99m);
+                "Scratch-made, freshly baked every morning.", 8.99m, "blueberries and muffin mix");
 
             _cafeRepo.AddMenuItem(menuItemThree);
-
-            //menuItemThree.MealIngredients.Add(CafeIngredients.Blueberries);
-            //menuItemThree.MealIngredients.Add(CafeIngredients.MuffinMix);                
         }
     }
 }
