@@ -167,13 +167,13 @@ namespace Challenge4_Console
             Console.WriteLine("The cost of all golf outings this year were: $" + costOfGolfOutings);
             // cost of bowling outings
             decimal costOfBowlingOutings = repo.CostByCategory(EventType.Bowling);
-            Console.WriteLine("The cost of all golf outings this year were: $" + costOfBowlingOutings);
+            Console.WriteLine("The cost of all bowling outings this year were: $" + costOfBowlingOutings);
             // cost of amusement park outings
             decimal costOfAmusementParkOutings = repo.CostByCategory(EventType.AmusementPark);
-            Console.WriteLine("The cost of all golf outings this year were: $" + costOfAmusementParkOutings);
+            Console.WriteLine("The cost of all amusement park outings this year were: $" + costOfAmusementParkOutings);
             // cost of concert outings
             decimal costOfConcertOutings = repo.CostByCategory(EventType.Concert);
-            Console.WriteLine("The cost of all golf outings this year were: $" + costOfConcertOutings);
+            Console.WriteLine("The cost of all concert outings this year were: $" + costOfConcertOutings);
         }
         private void SeedOutings()
         {
