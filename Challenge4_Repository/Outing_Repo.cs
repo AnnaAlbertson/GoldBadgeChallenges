@@ -23,49 +23,19 @@ namespace Challenge4_Repository
             decimal costOfOutings = _listOfOutings.Select(x => x.TotalCostEvent).Sum();
             return costOfOutings;
         }
-        public decimal CostByCategory()
+        public decimal CostByCategory(EventType eventType)
         {
             foreach(Outing outing in _listOfOutings)
             {
-                if (outing.TypeOfEvent == EventType.Golf)
+                if (outing.TypeOfEvent == eventType)
                 {
-                    List<decimal> listOfGolfCosts = new List<decimal>();
-                    listOfGolfCosts.Add(outing.TotalCostEvent);
-                    decimal costOfGolfOutings = listOfGolfCosts.Select(x => x).Sum();
-                    return costOfGolfOutings;
-                }
-                else if (outing.TypeOfEvent == EventType.Bowling)
-                {
-                    List<decimal> listOfBowlingCosts = new List<decimal>();
-                    listOfBowlingCosts.Add(outing.TotalCostEvent);
-                    decimal costOfBowlingOutings = listOfBowlingCosts.Select(x => x).Sum();
-                    return costOfBowlingOutings;
-                }
-                else if (outing.TypeOfEvent == EventType.AmusementPark)
-                {
-                    List<decimal> listOfAmusementParkCosts = new List<decimal>();
-                    listOfAmusementParkCosts.Add(outing.TotalCostEvent);
-                    decimal costOfAmusementParkOutings = listOfAmusementParkCosts.Select(x => x).Sum();
-                    return costOfAmusementParkOutings;
-                }
-                else if (outing.TypeOfEvent == EventType.Concert)
-                {
-                    List<decimal> listOfConcertCosts = new List<decimal>();
-                    listOfConcertCosts.Add(outing.TotalCostEvent);
-                    decimal costOfConcertOutings = listOfConcertCosts.Select(x => x).Sum();
-                    return costOfConcertOutings;
+                    List<decimal> listOfEventCosts = new List<decimal>();
+                    listOfEventCosts.Add(outing.TotalCostEvent);
+                    decimal costOfEventOutings = listOfEventCosts.Select(x => x).Sum();
+                    return costOfEventOutings;
                 }
             }
             return 0;
         }
     }
 }
-                //foreach (StreamingContent content in _listOfContent)
-                //{
-                //    if (content.Title.ToLower() == title.ToLower())
-                //    {
-                //        return content;
-                //    }
-                //}
-
-                //return null;
