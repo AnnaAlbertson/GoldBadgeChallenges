@@ -12,3 +12,5 @@ C:\ElevenFiftyProjects\GoldBadgeChallenges\GoldBadgeChallenges\Challenge2_UnitTe
 C:\ElevenFiftyProjects\GoldBadgeChallenges\GoldBadgeChallenges\Challenge2_UnitTests\obj\Debug\Challenge2_UnitTests.csproj.CopyComplete
 C:\ElevenFiftyProjects\GoldBadgeChallenges\GoldBadgeChallenges\Challenge2_UnitTests\obj\Debug\Challenge2_UnitTests.dll
 C:\ElevenFiftyProjects\GoldBadgeChallenges\GoldBadgeChallenges\Challenge2_UnitTests\obj\Debug\Challenge2_UnitTests.pdb
+C:\ElevenFiftyProjects\GoldBadgeChallenges\GoldBadgeChallenges\Challenge2_UnitTests\bin\Debug\Challenge2_Repository.dll
+C:\ElevenFiftyProjects\GoldBadgeChallenges\GoldBadgeChallenges\Challenge2_UnitTests\bin\Debug\Challenge2_Repository.pdb
