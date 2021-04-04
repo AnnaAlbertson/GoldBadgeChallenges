@@ -157,7 +157,8 @@ namespace Challenge4_Console
         }
         private void CombinedCostOutings()
         {
-
+            decimal totalCostOfEvents = repo.AddCostEvents();
+            Console.WriteLine("The total cost of outings entered is: $" + totalCostOfEvents);
         }
         private void CombinedCostByCategory()
         {

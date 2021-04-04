@@ -17,5 +17,11 @@ namespace Challenge4_Repository
         {
             _listOfOutings.Add(newOuting);
         }
+        public decimal AddCostEvents()
+        {
+            // Google helped me
+            decimal costOfCategory = _listOfOutings.Select(x => x.TotalCostEvent).Sum();
+            return costOfCategory;
+        }
     }
 }
