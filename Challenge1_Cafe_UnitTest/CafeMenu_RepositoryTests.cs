@@ -13,11 +13,12 @@ namespace Challenge1_Cafe_UnitTest
         [TestMethod]
         public void TestMethod_GetCafeMenuList()
         {
-            //Arrange
-
+            // Arrange - I didn't really feel like I needed it here
             //Act
+            List<CafeMenu> localList = repo.GetCafeMenuList();
 
             //Assert
+            Assert.IsNotNull(localList);
         }
 
         [TestMethod]

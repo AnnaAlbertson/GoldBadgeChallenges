@@ -11,12 +11,6 @@ namespace Challenge1_Cafe_Repository
         //Field to access the List of CafeMenu items
         private List<CafeMenu> _listOfCafeMenu = new List<CafeMenu>();
 
-        //Return list of Cafe Menu
-        public List<CafeMenu> GetCafeMenuList()
-        {
-            return _listOfCafeMenu;
-        }
-
         //Create new menu items
         public void AddMenuItem(CafeMenu menuItem)
         {
