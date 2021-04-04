@@ -124,6 +124,7 @@ namespace Challenge2_Console
             else
             {
                 Console.WriteLine("Please enter 'y' for yes or 'n' for no...");
+                TakeCareOfClaim();
             }
         }
         private void NewClaim()

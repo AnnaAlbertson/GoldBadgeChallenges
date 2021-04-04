@@ -15,11 +15,6 @@ namespace Challenge2_Repository
         {
             return _queueOfClaims;
         }
-        //Update to assist in the queue option in UI
-        public void PeekNextClaim()
-        {
-            _queueOfClaims.Peek();   
-        }
         //To remove a claim once it has been completed in the queue in UI
         public void DequeueClaim()
         {

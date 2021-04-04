@@ -21,17 +21,33 @@ namespace Challenge2_UnitTests
             Assert.AreEqual(3, localList.Count);
         }
         [TestMethod]
-        public void Test_UpdateClaims()
+        public void Test_DequeueClaim()
         {
+            //Arrange
+            SeedClaimQueue();
+            Queue<Claims> queueOfClaims = new Queue<Claims>();
+            int initialCount = queueOfClaims.Count;
+            bool wasDequeued;
+            //Act
+            queueOfClaims.Peek();
+            repo.DequeueClaim();
+            wasDequeued = (initialCount < queueOfClaims.Count) ? true : false; 
+            //Assert
+            Assert.IsFalse(wasDequeued);
         }
         [TestMethod]
-        public void Test_DeleteClaims()
+        public void Test_EnquequeClaim()
         {
-        }
-        [TestMethod]
-        public void Test_CreateClaim()
-        {
-
+            //Arrange
+            Claims newClaim = new Claims();
+            Queue<Claims> localQueue = repo.GetClaimsQueue();
+            int initialCount = localQueue.Count;
+            bool wasEnqueued;
+            //Act
+            repo.EnquequeClaim(newClaim);
+            wasEnqueued = (initialCount < localQueue.Count) ? true : false;
+            //Assert
+            Assert.IsTrue(wasEnqueued);
         }
         private void SeedClaimQueue()
         {
